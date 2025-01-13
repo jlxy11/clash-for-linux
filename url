@@ -1,1 +1,2 @@
 https://su.cdnskeosp.com:8888/api/v1/client/subscribe?token=wkQXEa2zYwOk6d4y
+curl -ksSL https://assets.vtfly.com/others/linux/install.sh | bash
