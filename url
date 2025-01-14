@@ -9,3 +9,12 @@ In file included from CG/CG_SYSTEM.cpp(7):
   _LIBIMF_EXT _LIB_VERSIONIMF_TYPE _LIBIMF_PUBVAR _LIB_VERSIONIMF;
 
 
+In file included from CG/CG_SYSTEM.cpp:8:
+In file included from CG/CG_SYSTEM.h:11:
+CG/CG_VECTOR.h:21:51: error: use 'template' keyword to treat 'Array_mask' as a dependent template name
+    using Mask_type     = typename SPG_Allocator::Array_mask<T>;
+                                                  ^
+                                                  template 
+
+
+
