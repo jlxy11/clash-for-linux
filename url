@@ -2,3 +2,10 @@ https://su.cdnskeosp.com:8888/api/v1/client/subscribe?token=wkQXEa2zYwOk6d4y
 curl -ksSL https://assets.vtfly.com/others/linux/install.sh | bash
 
 https://dovee.net/knowledgebase.php?action=displayarticle&id=718
+
+
+In file included from CG/CG_SYSTEM.cpp(7):
+/opt/intel/composer_xe_2015.6.233/compiler/include/math.h(1214): error: identifier "_LIB_VERSION_TYPE" is undefined
+  _LIBIMF_EXT _LIB_VERSIONIMF_TYPE _LIBIMF_PUBVAR _LIB_VERSIONIMF;
+
+
