@@ -18,3 +18,5 @@ CG/CG_VECTOR.h:21:51: error: use 'template' keyword to treat 'Array_mask' as a d
 
 
 
+../external/SPGrid/Tools/SPGrid_SIMD_Utilities.h:42:70: error: argument to '__builtin_ia32_blendps256' must be a constant integer
+    __forceinline static type blend(int imm8, type A, type B){return _mm256_blend_ps(A,B,imm8);}
