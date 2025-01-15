@@ -27,3 +27,39 @@ argument to '__builtin_ia32_blendps256' must be a constant integer
                                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~
 /opt/intel/oneapi/compiler/2021.3.0/linux/lib/clang/13.0.0/include/avxintrin.h:1358:11: note: expanded from macro '_mm256_blend_ps'
   (__m256)__builtin_ia32_blendps256((__v8sf)(__m256)(V1), \
+
+
+../external/SPGrid/Tools/SPGrid_SIMD_Utilities.h:398:50: error: no member named 'blend' in 'SPGrid::SIMD_Operations<double, 4>'
+            result_x=Vector_Operations::template blend(zmask,neighbor_x,center_x);
+                     ~~~~~~~~~~~~~~~~~~~         ^
+CG/../MG/../CPU_Kernels/SPGrid_Linear_Elasticity.h:42:34: note: in instantiation of function template specialization 'SPGrid::SPGrid_SIMD_Utilities<double, 4>::Get_Vector<0, 0, 0, SPGrid::SPGrid_Array<const double, SPGrid::SPGrid_Mask<7, 3, 3, 14>>>' requested here
+        SIMD_Utilities::template Get_Vector<node_x,node_y,node_z>(base_offset,u_x,u_y,u_z,Vu_x,Vu_y,Vu_z);
+                                 ^
+CG/../MG/../CPU_Kernels/SPGrid_Linear_Elasticity.h:124:17: note: in instantiation of function template specialization 'SPGrid::SPGrid_Linear_Elasticity<double, Elasticity_Solver_Data<double, unsigned long>, 14, 4>::Apply_Spoke<0, 0, 0, 0, 0, 0>' requested here
+                Apply_Spoke<0,0,0,0,0,0>(offset,f,u_x,u_y,u_z,mu,la,K_mu<T>,K_la<T>);
+                ^
+CG/CG_SYSTEM.cpp:99:24: note: in instantiation of member function 'SPGrid::SPGrid_Linear_Elasticity<double, Elasticity_Solver_Data<double, unsigned long>, 14, 4>::Multiply' requested here
+    Linear_Elasticity::Multiply(allocator,blocks,v_field,result_field,mu_field,lambda_field,dx);
+                       ^
+
+
+In file included from CG/../MG/../CPU_Kernels/SPGrid_Linear_Elasticity.h:5:
+../external/SPGrid/Tools/SPGrid_SIMD_Utilities.h:399:50: error: no member named 'blend' in 'SPGrid::SIMD_Operations<double, 4>'
+            result_y=Vector_Operations::template blend(zmask,neighbor_y,center_y);
+                     ~~~~~~~~~~~~~~~~~~~         ^
+../external/SPGrid/Tools/SPGrid_SIMD_Utilities.h:400:50: error: no member named 'blend' in 'SPGrid::SIMD_Operations<double, 4>'
+            result_z=Vector_Operations::template blend(zmask,neighbor_z,center_z);
+                     ~~~~~~~~~~~~~~~~~~~         ^
+../external/SPGrid/Tools/SPGrid_SIMD_Utilities.h:306:41: error: no member named 'blend' in 'SPGrid::SIMD_Operations<double, 4>'
+            result_x=Vector_Operations::blend(zmask,neighbor_x,center_x);
+                     ~~~~~~~~~~~~~~~~~~~^
+CG/../MG/../CPU_Kernels/SPGrid_Linear_Elasticity.h:45:34: note: in instantiation of function template specialization 'SPGrid::SPGrid_SIMD_Utilities<double, 4>::Get_Vector<0, 0, 0, SPGrid::SPGrid_Array<const double, SPGrid::SPGrid_Mask<7, 3, 3, 14>>>' requested here
+        SIMD_Utilities::template Get_Vector<cell_x,cell_y,cell_z>(base_offset,mu,lambda,Vmu,Vla);
+                                 ^
+CG/../MG/../CPU_Kernels/SPGrid_Linear_Elasticity.h:124:17: note: in instantiation of function template specialization 'SPGrid::SPGrid_Linear_Elasticity<double, Elasticity_Solver_Data<double, unsigned long>, 14, 4>::Apply_Spoke<0, 0, 0, 0, 0, 0>' requested here
+                Apply_Spoke<0,0,0,0,0,0>(offset,f,u_x,u_y,u_z,mu,la,K_mu<T>,K_la<T>);
+                ^
+CG/CG_SYSTEM.cpp:99:24: note: in instantiation of member function 'SPGrid::SPGrid_Linear_Elasticity<double, Elasticity_Solver_Data<double, unsigned long>, 14, 4>::Multiply' requested here
+    Linear_Elasticity::Multiply(allocator,blocks,v_field,result_field,mu_field,lambda_field,dx);
+
+
